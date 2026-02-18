@@ -1,6 +1,6 @@
 // --- Imports ---
-import { initTitleBar } from "./components/titleBar.js";
-import { fetchFromQuery } from "./components/apiRouting.js";
+import { initTitleBar } from "./components/ui_components/titleBar.js";
+import { fetchFromQuery } from "./components/app_components/apiRouting.js";
 
 // --- App Initialization ---
 function initApp() {
@@ -21,7 +21,7 @@ function initApp() {
 
   // --- Title Bar Component ---
   const titleBar = initTitleBar({
-    titleText: "Weather App",
+    titleText: "WEATHER",
     onInputKeyPress: handleInputKeyPress,
     onButtonClick: handleButtonClick,
     searchPlaceholder: "Enter a town or city",

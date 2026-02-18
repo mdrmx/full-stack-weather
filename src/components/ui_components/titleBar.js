@@ -1,6 +1,6 @@
-import { menuBtn } from "./ui_components/menuBtn.js";
-import { createMenuPanel } from "./ui_components/menuPanel.js";
-import { searchInput } from "./ui_components/searchInput.js";
+import { menuBtn } from "./menuBtn.js";
+import { createMenuPanel } from "./menuPanel.js";
+import { searchInput } from "./searchInput.js";
 
 /**
  * Highly modular title bar component
@@ -13,14 +13,15 @@ import { searchInput } from "./ui_components/searchInput.js";
  * @param {HTMLElement} options.hamburgerElement - Custom hamburger/menu button
  * @returns {HTMLElement} title bar div
  */
-export function initTitleBar({
-  titleText = "Weather App",
-  menuElement = null,
-  onInputKeyPress,
-  onButtonClick,
-  searchPlaceholder = "Enter a town or city",
-  hamburgerElement = null,
-} = {}) {
+export function initTitleBar(options) {
+  const {
+    titleText,
+    onInputKeyPress,
+    onButtonClick,
+    searchPlaceholder,
+    hamburgerElement,
+    menuElement,
+  } = options || {};
   const titleDiv = document.createElement("div");
   titleDiv.id = "title-div";
 
@@ -40,10 +41,10 @@ export function initTitleBar({
   const menu = menuElement || createMenuPanel();
 
   titleDiv.appendChild(h1);
-  container.appendChild(search);
-  container.appendChild(hamburger);
+  titleDiv.appendChild(search);
+  titleDiv.appendChild(hamburger);
   titleDiv.appendChild(menu);
-  titleDiv.appendChild(container);
+  // titleDiv.appendChild(container);
 
   return titleDiv;
 }

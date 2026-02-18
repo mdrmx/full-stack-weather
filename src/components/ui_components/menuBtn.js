@@ -8,9 +8,9 @@ function handleClick(event) {
 }
 
 export function menuBtn() {
-  const menuBtn = document.createElement("div");
+  const menuBtn = document.createElement("button");
   menuBtn.id = "menu-btn";
-  menuBtn.textContent = "\u2630";
+  menuBtn.innerHTML = "\u2630";
   menuBtn.addEventListener("click", handleClick);
   return menuBtn;
 }
